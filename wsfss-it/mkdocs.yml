@@ -109,12 +109,12 @@ extra:
         title: 此页面有帮助吗？
         ratings:
           - icon: material/thumb-up-outline
-            name: This page was helpful
+            name: 此页面有帮助
             data: 1
             note: >-
               谢谢你的反馈！
           - icon: material/thumb-down-outline
-            name: This page could be improved
+            name: 此页面没有任何帮助
             data: 0
             note: >- 
               Thanks for your feedback! Help us improve this page by
