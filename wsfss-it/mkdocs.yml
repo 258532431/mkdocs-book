@@ -1,0 +1,121 @@
+site_name: Hello World
+site_url: https://book.wsfss.top
+site_author: 风叔叔
+site_description: >-
+  风叔叔的分享
+
+theme:
+  name: material
+  logo: assets/logo.png
+  palette:
+    # - scheme: default
+    #   toggle:
+    #     icon: material/brightness-7 
+    #     name: 切换深色模式
+    # - scheme: slate
+    #   toggle:
+    #     icon: material/brightness-4
+    #     name: 切换浅色模式
+    primary: white #导航背景
+    accent: amber #强调色 如悬停、按钮
+  language: zh
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - navigation.indexes
+    - navigation.prune # 修剪功能，优化导航很多的场景页面加载速度
+    # - navigation.tabs.sticky # 滚动页面目录不隐藏
+    # - navigation.expand #目录全部展开
+repo_name: 258532431/mkdocs-book
+repo_url: https://github.com/258532431/mkdocs-book.git
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2023 - 2024 风叔叔
+
+markdown_extensions:
+  - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - glightbox
+  - blog:
+      blog_toc: true
+      post_excerpt_separator: <!-- more -->
+      archive: false
+      # archive_name: Archive
+  - git-revision-date-localized:
+      enable_creation_date: true
+  # - git-committers:
+  #     repository: 258532431/book_it
+  #     branch: main
+  #     token: github token
+  - git-authors
+  - search:
+      lang: zh
+      search_inde
+
+extra:
+  social:
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/
+    - icon: fontawesome/brands/github
+      link: https://github.com/trending
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<258532431@qq.com>
+
+# 导航
+nav:
+  - 前言: index.md
+  - 关于此书: about.md
+  - 编程语言: 
+    - Java:
+      - 基础知识: java/basic.md
+      - 进阶知识: java/advanced.md
+  - 数据库:
+    - MySQL: database/mysql.md
+  - 开发技术:
+    - Spring: technology/spring.md
+    - MyBatis: technology/mybatis.md
+    - Maven: technology/maven.md
+  - Mkdocs: mkdocs.md
+  - Blog:
+    - blog/index.md
