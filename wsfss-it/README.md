@@ -9,7 +9,7 @@
 1. 进入python虚拟环境
 
 ```
-    # 进入虚拟环境
+    # 创建虚拟环境
     python3 -m venv path/to/venv
 
     # 激活虚拟环境

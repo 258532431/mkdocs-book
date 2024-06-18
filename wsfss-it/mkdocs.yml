@@ -1,9 +1,11 @@
+# 网站信息
 site_name: Hello World
 site_url: https://book.wsfss.top
 site_author: 风叔叔
 site_description: >-
   风叔叔的分享
 
+# 主题
 theme:
   name: material
   logo: assets/logo.png
@@ -44,11 +46,18 @@ theme:
     - navigation.prune # 修剪功能，优化导航很多的场景页面加载速度
     # - navigation.tabs.sticky # 滚动页面目录不隐藏
     # - navigation.expand #目录全部展开
+
+# github 仓库
 repo_name: 258532431/mkdocs-book
 repo_url: https://github.com/258532431/mkdocs-book.git
+
+# 编辑路径
 edit_uri: edit/main/docs/
+
+# 版权
 copyright: Copyright &copy; 2023 - 2024 风叔叔
 
+# markdown 扩展
 markdown_extensions:
   - footnotes
   - admonition
@@ -75,6 +84,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
+# Plugins
 plugins:
   - glightbox
   - blog:
@@ -85,13 +95,14 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   # - git-committers:
-  #     repository: 258532431/book_it
+  #     repository: 258532431/mkdocs-book
   #     branch: main
   #     token: github token
   - git-authors
   - search:
       lang: zh
 
+# Extra
 extra:
   social:
     - icon: fontawesome/brands/docker
@@ -102,6 +113,7 @@ extra:
       link: https://www.instagram.com/
     - icon: fontawesome/solid/paper-plane
       link: mailto:<258532431@qq.com>
+  # 网站统计
   analytics: 
     provider: google
     property: G-86QZVFJSKB
@@ -119,6 +131,7 @@ extra:
             note: >- 
               Thanks for your feedback! Help us improve this page by
               using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+  # 隐私政策
   consent:
     title: Cookie consent
     description: >- 
@@ -139,6 +152,8 @@ nav:
     - Spring: technology/spring.md
     - MyBatis: technology/mybatis.md
     - Maven: technology/maven.md
-  - Mkdocs: mkdocs.md
+  - Mkdocs: 
+    - 开始: mkdocs/start.md
+    - 参考: mkdocs/reference.md
   - Blog:
     - blog/index.md
