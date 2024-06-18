@@ -8,16 +8,18 @@ theme:
   name: material
   logo: assets/logo.png
   palette:
-    # - scheme: default
-    #   toggle:
-    #     icon: material/brightness-7 
-    #     name: 切换深色模式
-    # - scheme: slate
-    #   toggle:
-    #     icon: material/brightness-4
-    #     name: 切换浅色模式
-    primary: white #导航背景
-    accent: amber #强调色 如悬停、按钮
+    - scheme: default # 日间模式
+      primary: white #导航背景
+      accent: amber #强调色 如悬停、按钮
+      toggle:
+        icon: material/weather-night # 图标
+        name: 切换至夜间模式 # 鼠标悬浮提示
+    - scheme: slate # 夜间模式
+      primary: black #导航背景
+      accent: amber #强调色 如悬停、按钮
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
   language: zh
   features:
     - content.code.copy
@@ -89,7 +91,6 @@ plugins:
   - git-authors
   - search:
       lang: zh
-      search_inde
 
 extra:
   social:
@@ -101,6 +102,28 @@ extra:
       link: https://www.instagram.com/
     - icon: fontawesome/solid/paper-plane
       link: mailto:<258532431@qq.com>
+  analytics: 
+    provider: google
+    property: G-86QZVFJSKB
+    feedback:
+        title: 此页面有帮助吗？
+        ratings:
+          - icon: material/thumb-up-outline
+            name: This page was helpful
+            data: 1
+            note: >-
+              谢谢你的反馈！
+          - icon: material/thumb-down-outline
+            name: This page could be improved
+            data: 0
+            note: >- 
+              Thanks for your feedback! Help us improve this page by
+              using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+  consent:
+    title: Cookie consent
+    description: >- 
+      我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
+      如果你同意，你可以帮助我们让我们的网站更好。
 
 # 导航
 nav:
