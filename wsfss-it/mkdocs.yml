@@ -59,33 +59,37 @@ copyright: Copyright &copy; 2023 - 2024 风叔叔
 
 # markdown 扩展
 markdown_extensions:
-  - footnotes
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+  - footnotes #脚注
+  - admonition #提示
+  - pymdownx.details #详情
+  - pymdownx.superfences #代码块
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
+      linenums_style: pymdownx.inline
+  - pymdownx.inlinehilite #代码高亮
+  - pymdownx.snippets #代码片段
+  - abbr #缩写
   - pymdownx.tabbed:
       alternate_style: true
-  - tables
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - attr_list
-  - md_in_html
-  - pymdownx.emoji:
+  - tables #表格
+  - pymdownx.critic #评论
+  - pymdownx.caret #下划线
+  - pymdownx.keys #键盘按键
+  - pymdownx.mark #波浪线
+  - pymdownx.tilde #删除线
+  - attr_list #列表属性
+  - md_in_html #html标签
+  - pymdownx.emoji: #表情
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - def_list
+  - def_list #定义列表
   - pymdownx.tasklist:
       custom_checkbox: true
+  - meta #元数据
 
 # Plugins
 plugins:
+  - macros
   - glightbox
   - blog:
       blog_toc: true
@@ -111,8 +115,11 @@ extra:
       link: https://github.com/trending
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
     - icon: fontawesome/solid/paper-plane
       link: mailto:<258532431@qq.com>
+      name: 258532431@qq.com
   # 网站统计
   analytics: 
     provider: google
