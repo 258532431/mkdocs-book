@@ -11,8 +11,8 @@ nav:
   - 关于此书: about.md
   - 编程语言: 
     - Java:
-      - 流处理: java/stream.md
-      - 异步任务: java/thread.md
+      - 流处理与函数式编程: java/stream-function.md
+      - 异步任务处理: java/thread.md
   - 数据库:
     - MySQL: database/mysql.md
   - 开发技术:
