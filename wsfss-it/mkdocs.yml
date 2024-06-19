@@ -11,8 +11,8 @@ nav:
   - 关于此书: about.md
   - 编程语言: 
     - Java:
-      - 基础知识: java/basic.md
-      - 进阶知识: java/advanced.md
+      - 流处理: java/stream.md
+      - 异步任务: java/thread.md
   - 数据库:
     - MySQL: database/mysql.md
   - 开发技术:
@@ -148,7 +148,7 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true #行号
       linenums_style: pymdownx.inline
-      auto_title: true # 显示编程语言名称
+      # auto_title: true # 显示编程语言名称
   - pymdownx.inlinehilite #代码高亮
   - pymdownx.snippets #代码片段
   - abbr #缩写
