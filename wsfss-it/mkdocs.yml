@@ -9,6 +9,8 @@ site_description: >-
 theme:
   name: material
   logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - scheme: default # 日间模式
       primary: white #导航背景
@@ -97,11 +99,12 @@ plugins:
       archive: false
       # archive_name: Archive
   - git-revision-date-localized:
+      type: datetime
       enable_creation_date: true
-  # - git-committers:
-  #     repository: 258532431/mkdocs-book
-  #     branch: main
-  #     token: github token
+  - git-committers:
+      repository: 258532431/mkdocs-book
+      branch: main
+      token: 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
   - git-authors
   - search:
       lang: zh
