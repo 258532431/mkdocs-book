@@ -1,6 +1,7 @@
 {% if page.meta.comments %}
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
   <!-- Insert generated snippet here -->
+  <!-- data-loading="lazy" 懒加载评论 -->
   <script src="https://giscus.app/client.js"
     data-repo="258532431/mkdocs-book"
     data-repo-id="R_kgDOMKuS7g"
@@ -13,7 +14,6 @@
     data-input-position="top"
     data-theme="noborder_light"
     data-lang="zh-CN"
-    data-loading="lazy"
     crossorigin="anonymous"
     async>
   </script>
