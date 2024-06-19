@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## 1. 介绍
 
 Material for MkDocs是MkDocs的一个主题，MkDocs是一个用于生成静态页面的程序。我们使用 `pip` 这个Python的包管理器来安装Material for MkDocs。
@@ -129,7 +133,4 @@ jobs:
 mkdocs gh-deploy --force
 ```
 
-:arrow_up: [<font size="2">回到顶部</font>][top]
-
-[top]: #
 

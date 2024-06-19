@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## 常用类库
 
 很多知名大厂都提供了丰富的工具包类库，以下列举了一些常用的类库。
@@ -45,6 +49,3 @@
     </dependencies>
     ```
 
-:arrow_up: [<font size="2">回到顶部</font>][top]
-
-[top]: #

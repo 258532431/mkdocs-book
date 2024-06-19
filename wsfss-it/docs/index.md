@@ -1,3 +1,7 @@
+---
+comments: false
+---
+
 # 欢迎来到 {{ config.site_name }}
 
 > 学海无涯苦作舟，逆水行舟不进则退。

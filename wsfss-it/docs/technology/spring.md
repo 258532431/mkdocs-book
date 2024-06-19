@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## AOP
 
 `Spring AOP` 是通过动态代理实现的，实现动态代理有两种方式，一种是 `JDK` 自带的动态代理，另一种是 `cglib`。
@@ -36,6 +40,3 @@
 
 `@ConditionalOnProperty` 应用于方法，表明指定属性的值为某个值时，才实例化。
 
-:arrow_up: [<font size="2">回到顶部</font>][top]
-
-[top]: #

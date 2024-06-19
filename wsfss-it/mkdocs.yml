@@ -5,10 +5,32 @@ site_author: 风叔叔
 site_description: >-
   风叔叔的分享
 
+# 导航
+nav:
+  - 前言: index.md
+  - 关于此书: about.md
+  - 编程语言: 
+    - Java:
+      - 基础知识: java/basic.md
+      - 进阶知识: java/advanced.md
+  - 数据库:
+    - MySQL: database/mysql.md
+  - 开发技术:
+    - Spring: technology/spring.md
+    - MyBatis: technology/mybatis.md
+    - Maven: technology/maven.md
+  - Mkdocs: 
+    - 开始: mkdocs/start.md
+    - 参考: mkdocs/reference.md
+  - Blog:
+    - blog/index.md
+
 # 主题
 theme:
   name: material
+  custom_dir: overrides
   logo: assets/logo.png
+  # 右上角仓库图标
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -46,72 +68,41 @@ theme:
     - navigation.path
     - navigation.indexes
     - navigation.prune # 修剪功能，优化导航很多的场景页面加载速度
+    - navigation.top # 返回顶部的按钮 在上滑时出现
     # - navigation.tabs.sticky # 滚动页面目录不隐藏
     # - navigation.expand #目录全部展开
 
-# github 仓库
-repo_name: 258532431/mkdocs-book
-repo_url: https://github.com/258532431/mkdocs-book.git
-
-# 编辑路径
-edit_uri: edit/main/docs/
+repo_name: 258532431/mkdocs-book # github 仓库名称
+repo_url: https://github.com/258532431/mkdocs-book.git # github 仓库
+edit_uri: edit/main/docs/ # 编辑路径
 
 # 版权
-copyright: Copyright &copy; 2023 - 2024 风叔叔
-
-# markdown 扩展
-markdown_extensions:
-  - footnotes #脚注
-  - admonition #提示
-  - pymdownx.details #详情
-  - pymdownx.superfences #代码块
-  - pymdownx.highlight:
-      anchor_linenums: true
-      linenums_style: pymdownx.inline
-  - pymdownx.inlinehilite #代码高亮
-  - pymdownx.snippets #代码片段
-  - abbr #缩写
-  - pymdownx.tabbed:
-      alternate_style: true
-  - tables #表格
-  - pymdownx.critic #评论
-  - pymdownx.caret #下划线
-  - pymdownx.keys #键盘按键
-  - pymdownx.mark #波浪线
-  - pymdownx.tilde #删除线
-  - attr_list #列表属性
-  - md_in_html #html标签
-  - pymdownx.emoji: #表情
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - def_list #定义列表
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - meta #元数据
+copyright: Copyright &copy; 2024 风叔叔
 
 # Plugins
 plugins:
   - macros
   - glightbox
   - blog:
-      blog_toc: true
-      post_excerpt_separator: <!-- more -->
-      archive: false
-      # archive_name: Archive
+      blog_toc: true # 显示目录
+      post_excerpt_separator: <!-- more --> # 截取文章摘要标识
+      archive: false # 是否开启归档
+      # archive_name: Archive # 归档名称
   - git-revision-date-localized:
       type: datetime
       enable_creation_date: true
-  - git-committers:
-      repository: 258532431/mkdocs-book
-      branch: main
-      token: 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
+  # - git-committers:
+  #     repository: 258532431/mkdocs-book
+  #     branch: main
+  #     token: git token
   - git-authors
   - search:
       lang: zh
 
 # Extra
 extra:
-  social:
+  # generator: false  #删除页脚显示“使用MkDocs”
+  social: # 页脚分享
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/
     - icon: fontawesome/brands/github
@@ -148,22 +139,38 @@ extra:
       我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
       如果你同意，你可以帮助我们让我们的网站更好。
 
-# 导航
-nav:
-  - 前言: index.md
-  - 关于此书: about.md
-  - 编程语言: 
-    - Java:
-      - 基础知识: java/basic.md
-      - 进阶知识: java/advanced.md
-  - 数据库:
-    - MySQL: database/mysql.md
-  - 开发技术:
-    - Spring: technology/spring.md
-    - MyBatis: technology/mybatis.md
-    - Maven: technology/maven.md
-  - Mkdocs: 
-    - 开始: mkdocs/start.md
-    - 参考: mkdocs/reference.md
-  - Blog:
-    - blog/index.md
+# markdown 扩展
+markdown_extensions:
+  - footnotes #脚注
+  - admonition #提示
+  - pymdownx.details #详情
+  - pymdownx.superfences #代码块
+  - pymdownx.highlight:
+      anchor_linenums: true #行号
+      linenums_style: pymdownx.inline
+      auto_title: true # 显示编程语言名称
+  - pymdownx.inlinehilite #代码高亮
+  - pymdownx.snippets #代码片段
+  - abbr #缩写
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables #表格
+  - pymdownx.critic #评论
+  - pymdownx.caret #下划线
+  - pymdownx.keys #键盘按键
+  - pymdownx.mark #波浪线
+  - pymdownx.tilde #删除线
+  - attr_list #列表属性
+  - md_in_html #html标签
+  - pymdownx.emoji: #表情
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list #定义列表
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - meta #元数据
+
+# extra_javascript:
+  # - javascripts/extra.js
+# extra_css:
+  # - stylesheets/extra.css

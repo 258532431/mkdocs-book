@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## 创建账户
 
 我们安装`MySQL`后，通常需要创建一个账户。下面是一个创建账户的示例：
@@ -79,6 +83,3 @@ FLUSH PRIVILEGES;
     WHERE r.qty_rank<10
     ```
 
-:arrow_up: [<font size="2">回到顶部</font>][top]
-
-[top]: #

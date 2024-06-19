@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## 1. Mkdocs
 
 ### 网站设置
@@ -420,6 +424,4 @@ plugins:
 
     </div>
 
-:arrow_up: [<font size="2">回到顶部</font>][top]
 
-[top]: #
