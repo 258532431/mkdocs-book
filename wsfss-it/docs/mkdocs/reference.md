@@ -314,7 +314,7 @@ markdown_extensions:
 
 ### 表情
 
-Emoji扩展是Python Markdown扩展的一部分，它增加了在*.svg文件格式中集成表情符号和图标的能力，这些文件格式在构建网站时被内联。
+Emoji扩展是Python Markdown扩展的一部分，它增加了在*.svg文件格式中集成表情符号和图标的能力，这些文件格式在构建网站时被内联 [[^^搜索表情^^](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/)]。
 
 需要配置如下扩展：
 
