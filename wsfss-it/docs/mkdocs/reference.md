@@ -22,10 +22,10 @@ site_description: >- #网站描述
 
 === "pip方式安装"
 
-```yaml
-theme:
-  name: material
-```
+  ```yaml
+  theme:
+    name: material
+  ```
 
 如果你想丰富主题，可以借助 [material](#Material扩展) 主题添加额外的一些配置。
 
@@ -57,14 +57,14 @@ theme:
 
 === "mkdocs.yml"
 
-```yaml
-nav:
-  - Home: index.md
-  - About: about.md
-  - Guide:
-    - Overview: guide/overview.md
-    - Getting Started: guide/getting-started.md
-```
+  ```yaml
+  nav:
+    - Home: index.md
+    - About: about.md
+    - Guide:
+      - Overview: guide/overview.md
+      - Getting Started: guide/getting-started.md
+  ```
 
 ## 2. Material扩展<a name="Material扩展"></a>
 
@@ -74,11 +74,11 @@ MkDocs支持两种配色方案，浅色模式 `default` 和 深色模式 `slate`
 
 === "mkdocs.yml"
 
-``` yaml
-theme:
-  palette:
-    scheme: default
-```
+  ``` yaml
+  theme:
+    palette:
+      scheme: default
+  ```
 
 点击按钮切换配色模式:
 
@@ -107,11 +107,11 @@ theme:
 
 === "mkdocs.yml"
 
-```yaml
-theme:
-  palette:
-    primary: indigo
-```
+  ```yaml
+  theme:
+    palette:
+      primary: indigo
+  ```
 
 ### 缩略语
 
@@ -121,22 +121,22 @@ theme:
 
 === "mkdocs.yml"
 
-```yaml
-markdown_extensions:
-  - abbr
-  - pymdownx.snippets
-```
+  ```yaml
+  markdown_extensions:
+    - abbr
+    - pymdownx.snippets
+  ```
 
 配置完成后，我们可以使用 `abbr` 标记来定义缩写词。
 
 === "示例"
 
-```
-The HTML specification is maintained by the W3C.
+  ```
+  The HTML specification is maintained by the W3C.
 
-*[HTML]: Hyper Text Markup Language
-*[W3C]: World Wide Web Consortium
-```
+  *[HTML]: Hyper Text Markup Language
+  *[W3C]: World Wide Web Consortium
+  ```
 
 显示效果：
 
@@ -199,9 +199,9 @@ public class Test {
 
 === "示例"
 
-```
-++ctrl+alt+del++
-```
+  ```
+  ++ctrl+alt+del++
+  ```
 
 ### 提示
 
@@ -220,12 +220,12 @@ markdown_extensions:
 
 === "示例":
 
-```
-!!! note
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-```
+  ```
+  !!! note
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+      nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+      massa, nec semper lorem quam in massa.
+  ```
 
 显示效果：
 
@@ -238,12 +238,12 @@ markdown_extensions:
 
 === "示例":
 
-```
-!!! note ""
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-```
+  ```
+  !!! note ""
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+      nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+      massa, nec semper lorem quam in massa.
+  ```
 
 显示效果：
 
@@ -256,22 +256,22 @@ markdown_extensions:
 
 === "示例":
 
-```
-???+ tip
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+  ```
+  ???+ tip
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+      nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+      massa, nec semper lorem quam in massa.
 
-    === "代码块"
+      === "代码块"
 
-    ```javascript linenums="1"
-    def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-    ```
-```
+      ```javascript linenums="1"
+      def bubble_sort(items):
+      for i in range(len(items)):
+          for j in range(len(items) - 1 - i):
+              if items[j] > items[j + 1]:
+                  items[j], items[j + 1] = items[j + 1], items[j]
+      ```
+  ```
 
 显示效果：
 
@@ -320,12 +320,12 @@ Emoji扩展是Python Markdown扩展的一部分，它增加了在*.svg文件格�
 
 === "mkdoc.yml"
 
-```
-markdown_extensions:
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-```
+  ```
+  markdown_extensions:
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  ```
 
 示例：```:smile: 开心```
 
@@ -365,11 +365,11 @@ markdown_extensions:
 
 === "mkdocs.yml"
 
-```
-markdown_extensions:
-  - attr_list
-  - md_in_html
-```
+  ```
+  markdown_extensions:
+    - attr_list
+    - md_in_html
+  ```
 
 如果你想在你的文档中添加图像缩放功能，则需要使用 `pip` 安装安装 `glightbox` 插件:
 
@@ -381,10 +381,10 @@ pip3 install mkdocs-glightbox
 
 === "mkdocs.yml"
 
-```
-plugins:
-  - glightbox
-```
+  ```
+  plugins:
+    - glightbox
+  ```
 
 示例：
 
