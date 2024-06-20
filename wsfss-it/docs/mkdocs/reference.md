@@ -529,3 +529,28 @@ pip3 install mkdocs-glightbox
     [:octicons-arrow-right-24: License](#)
 
 </div>
+
+### 脚注
+
+脚注内容使用 `[^1]:` 标识符声明。它可以插入到文档中的任意位置，并且总是呈现在页面的底部。此外，还会自动添加到脚注引用的反向链接。
+
+=== "脚注引用"
+
+  ```
+  [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+  [^2]:
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+      nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+      massa, nec semper lorem quam in massa.
+  ```
+
+显示效果：
+
+[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+[^2]:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+

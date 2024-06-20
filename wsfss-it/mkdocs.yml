@@ -12,7 +12,8 @@ nav:
   - 编程语言: 
     - Java:
       - 流处理与函数式编程: java/stream-function.md
-      - 异步任务处理: java/thread.md
+      - 多线程: java/thread.md
+      - 安全性: java/security.md
   - 数据库:
     - MySQL: database/mysql.md
   - 开发技术:
@@ -90,7 +91,7 @@ plugins:
       # archive_name: Archive # 归档名称
   - git-revision-date-localized:
       type: datetime
-      enable_creation_date: true
+      enable_creation_date: false # 是否显示创建时间
   # - git-committers:
   #     repository: 258532431/mkdocs-book
   #     branch: main
