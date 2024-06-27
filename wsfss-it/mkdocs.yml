@@ -17,9 +17,9 @@ nav:
   - 数据库:
     - MySQL: database/mysql.md
   - 开发技术:
-    - Spring: technology/spring.md
-    - MyBatis: technology/mybatis.md
     - Maven: technology/maven.md
+    - Git: technology/git.md
+    - Spring: technology/spring.md
   - Mkdocs: 
     - 开始: mkdocs/start.md
     - 参考: mkdocs/reference.md
