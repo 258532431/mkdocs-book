@@ -4,20 +4,6 @@ comments: true
 
 `git` 是一个分布式版本控制系统，用于敏捷高效地处理项目变更。
 
-## 应用举例
-
-### 代码冲突处理
-
-当你的开发进行到一半，但是代码还不想进行提交，然后需要同步去关联远端代码时，如果你本地的代码和远端代码没有冲突时，可以直接通过 `git pull` 解决，但是如果可能发生冲突怎么办，直接 `git pull` 会拒绝覆盖当前的修改。这个时候，你可能需要 `git pull --rebase`。
-
-有时候 `git pull --rebase` 可能不起作用，这个时候，你可能需要用到 `git stash`。`git stash` 将本地的修改保存起来，并且将当前代码切换到 HEAD 提交上，然后进行 `git pull`，再 pop 出本地代码：
-
-```linenums="1"
-git stash
-git pull
-git stash pop
-```
-
 ## Git 常用命令
 
 ### 初始化
@@ -95,4 +81,19 @@ git stash list # 显示暂存列表
 git show HEAD # 显示HEAD提交日志
 git show HEAD^  # 显示HEAD上一个版本的提交日志 ^^为上两个版本 ^5为上5个版本
 git reset --hard HEAD # 将当前版本重置为HEAD（通常用于merge失败回退）
+git reset --hard commit-id # 将当前版本重置为指定的提交版本
+```
+
+## 应用举例
+
+### 代码冲突处理
+
+当你的开发进行到一半，但是代码还不想进行提交，然后需要同步去关联远端代码时，如果你本地的代码和远端代码没有冲突时，可以直接通过 `git pull` 解决，但是如果可能发生冲突怎么办，直接 `git pull` 会拒绝覆盖当前的修改。这个时候，你可能需要 `git pull --rebase`。
+
+有时候 `git pull --rebase` 可能不起作用，这个时候，你可能需要用到 `git stash`。`git stash` 将本地的修改保存起来，并且将当前代码切换到 HEAD 提交上，然后进行 `git pull`，再 pop 出本地代码：
+
+```linenums="1"
+git stash
+git pull
+git stash pop
 ```

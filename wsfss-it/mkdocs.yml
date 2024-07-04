@@ -14,6 +14,7 @@ nav:
       - 流处理与函数式编程: java/stream-function.md
       - 多线程: java/thread.md
       - 安全性: java/security.md
+      - Lombok: java/lombok.md
   - 数据库:
     - MySQL: database/mysql.md
   - 开发技术:
