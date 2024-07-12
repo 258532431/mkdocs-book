@@ -78,6 +78,10 @@ docker compose watch
 # 该镜像需要依赖的基础镜像
 FROM openjdk:8-jdk-alpine
 
+# 指定时区
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo 'Asia/Shanghai' >/etc/timezone
+
 # 在容器内创建/app工作目录
 WORKDIR /app
 
@@ -138,5 +142,85 @@ docker run -d -p 9200:9200 --name website_api yang258532/website_api:1.0.0
 curl -X GET "http://localhost:9200/site/getPv" -H "accept: application/json"
 ```
 
-## 扩展
+## Docker Compose 扩展
 
+Docker Compose 是一个定义和运行多容器应用程序的工具。
+
+Compose 简化了整个应用程序堆栈的控制，让您能够轻松地在一个简单易懂的 YAML 配置文件中管理服务、网络和卷。然后，您只需使用一个命令即可从配置文件中创建和启动所有服务。
+
+### 安装和卸载
+
+获取 Docker Compose 的最简单且推荐的方法是安装 Docker Desktop。Docker Desktop 包括 Docker Compose。
+
+* 对于 Ubuntu 和 Debian，运行：
+```bash
+# 安装
+sudo apt-get update
+sudo apt-get install docker-compose-plugin
+
+# 卸载
+sudo apt-get remove docker-compose-plugin
+```
+
+* 对于基于 RPM 的发行版，运行：
+```bash
+# 安装
+sudo yum update
+sudo yum install docker-compose-plugin
+
+# 卸载
+sudo yum remove docker-compose-plugin
+```
+
+* 通过检查版本来验证 Docker Compose 是否正确安装。
+```bash
+# 显示版本号
+docker compose version
+```
+
+### 工作原理
+
+Compose 文件的默认路径是 `compose.yaml`（首选） 或 ，`compose.yml` 位于工作目录中。Compose 还支持 `docker-compose.yaml` 和 ，`docker-compose.yml` 以向后兼容早期版本。如果两个文件都存在，Compose 会优先使用规范的 `compose.yaml`。
+
+### 快速开始
+
+上面我们已经写好了 `Dockerfile` 文件，现在需要在您的项目根目录中创建一个名为的文件 `compose.yaml` 并粘贴以下内容：
+
+```yaml title="compose.yaml" linenums="1"
+services:
+  # 创建一个名为 website_api 的服务
+  website_api:
+    # 使用当前目录下的 Dockerfile 作为构建文件
+    build: .
+    # 映射端口
+    ports:
+      - "9200:9200"
+    # 指定启动的项目配置环境
+    command: --spring.profiles.active=prod
+  # 创建一个名为 redis 的服务
+  redis:
+    # 使用 redis:latest 作为镜像
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+```
+
+通过 Compose 命令启动服务：
+
+```bash
+# 先用 maven 命令编译一下项目jar包
+mvn clean install -P prod
+
+# 启动
+docker compose up
+
+# 停止
+docker compose down
+
+# 重启
+docker compose restart
+```
+
+## 延伸
+
+使用 `jekins` + `k8s` + `docker-compose` 构建 CI/CD 流水线。
