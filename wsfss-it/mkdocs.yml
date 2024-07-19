@@ -19,6 +19,7 @@ nav:
     - MySQL: database/mysql.md
   - 开发技术:
     - Docker: technology/docker.md
+    - Kubernetes: technology/kubernetes.md
     - Maven: technology/maven.md
     - Git: technology/git.md
     - Spring: technology/spring.md

@@ -85,6 +85,9 @@ RUN echo 'Asia/Shanghai' >/etc/timezone
 # 在容器内创建/app工作目录
 WORKDIR /app
 
+# 安装curl
+RUN apk add --no-cache curl
+
 # 将当前目录下的jar包复制到docker容器的/目录下 指定新的jar名称
 ADD target/website_api-1.0.0-SNAPSHOT.jar website_api.jar
 
