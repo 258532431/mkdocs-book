@@ -295,8 +295,8 @@ Services运行状态正常。
 
 通过 `curl` 命令验证 app 接口是否可以正常调用：
 ```
-curl --location 'http://localhost:9200/site/setPv'
+curl --location 'http://localhost:30000/site/setPv'
 ```
 
 !!! note "提示"
-    由于我们是本地集群部署，没有公网分配外部IP，所以只能在集群内访问。
+    由于我们是本地集群部署，所以Service对应的外部IP地址是 `localhost`，端口我们在上面配置的 `nodePort`。
