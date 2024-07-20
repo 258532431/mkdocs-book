@@ -293,6 +293,9 @@ Pods运行状态正常。
 Services运行状态正常。
 ![alt text](../assets/k8s/services.png)
 
+查看Service对应的外部IP地址和端口。
+![alt text](../assets/k8s/service.png)
+
 通过 `curl` 命令验证 app 接口是否可以正常调用：
 ```
 curl --location 'http://localhost:30000/site/setPv'
