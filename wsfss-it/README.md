@@ -51,13 +51,16 @@ docker save -o /Users/ycl/Desktop/soft/docker/sealos-k8s/mkdocs.tar yang258532/m
 sealos login -u admin -p passw0rd sealos.hub:5000
 # 加载镜像
 sealos load -i mkdocs.tar
+# 查看镜像
+sealos images
 # 打tag
-sealos tag yang258532/mkdocs:latest sealos.hub:5000/mkdocs:latest
+sealos tag docker.io/yang258532/mkdocs:latest sealos.hub:5000/mkdocs:latest
 # 推送镜像到仓库
 sealos push sealos.hub:5000/mkdocs:latest
 ```
 
 5. 部署
 ```
+kubectl delete -f mkdocs-deployment.yaml
 kubectl apply -f mkdocs-deployment.yaml
 ```
