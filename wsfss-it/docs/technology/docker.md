@@ -108,6 +108,13 @@ MAINTAINER fss
 # -t 表示指定<镜像仓库用户名>/<镜像名称> .表示使用当前目录下的 Dockerfile，注意镜像名称不要有短横杠，貌似无法识别
 docker build -t yang258532/website_api .
 
+# 构建时指定内核架构
+docker build --platform linux/arm64 -t yang258532/website_api .
+docker build --platform linux/amd64 -t yang258532/website_api .
+
+# 查看内核版本
+docker inspect [ImageID]
+
 # 删除镜像 表示指定<镜像仓库用户名>/<镜像名称>:<tag名称>
 docker rmi yang258532/website_api:1.0.0
 
@@ -223,7 +230,3 @@ docker compose down
 # 重启
 docker compose restart
 ```
-
-## 延伸
-
-使用 `jekins` + `k8s` + `docker-compose` 构建 CI/CD 流水线。

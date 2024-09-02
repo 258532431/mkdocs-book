@@ -20,6 +20,8 @@ nav:
   - 开发技术:
     - Docker: technology/docker.md
     - Kubernetes: technology/kubernetes.md
+    - Sealos K8s: technology/sealos.md
+    - Jenkins: technology/jenkins.md
     - Maven: technology/maven.md
     - Git: technology/git.md
     - Spring: technology/spring.md
