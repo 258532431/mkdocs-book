@@ -428,6 +428,50 @@ kubectl --namespace ingress-nginx get services -o wide -w ingress-nginx-controll
 kubectl get svc ingress-nginx-controller -n ingress-nginx
 ```
 
+配置tls用于支持https请求，首先准备好CA证书，一般域名服务商会提供免费的。
+```bash
+# 没有CA证书的话可以通过下面命令创建自签CA证书
+openssl genrsa -out ingress.key 2048
+openssl req -new -key ingress.key -out ingress.csr -subj "/CN=book.wsfss.top"
+openssl x509 -req -days 365 -in ingress.csr -signkey ingress.key -out ingress.crt
+
+# 这里我没有使用自签CA，用了腾讯云的。使用命令创建secret，$ kubectl create secret tls ${CERT_NAME} --key ${KEY_FILE} --cert ${CERT_FILE} -n ${NAMESPACE}
+# 先校验一下证书有效性
+openssl x509 -in book.wsfss.top_bundle.crt -text -noout
+# 创建secret
+kubectl create secret tls book-tls-secret --key book.wsfss.top.key --cert book.wsfss.top_bundle.crt -n prod
+```
+
+配置 Ingress 开启 TLS，一个 Ingress 只能使用一个 secret，也就是说只能用一个证书,或者说如果你在一个 Ingress 中配置了多个域名，那么使用 TLS 的话必须保证证书支持该 Ingress 下所有域名。
+```yaml title="ingress-example.yaml"
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mkdocs-ingress
+  namespace: prod
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false" #不强制使用ssl
+spec:
+  tls:
+  - hosts:
+    - book.wsfss.top
+    secretName: book-tls-secret
+  rules:
+  - host: book.wsfss.top
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mkdocs
+            port:
+              name: http
+```
+
+如果访问不了，检查下 `ingress-nginx-controller` SSL对应的端口是否开放安全组。
+
 ## 域名访问
 
 我们虽然使用了 ingress-nginx 来实现域名解析，但是 ingress-nginx 并没有开放80端口和443端口给外部访问，我们通过nginx来进行一层转发
@@ -455,11 +499,13 @@ server {
 }
 
 server {
-    listen 443;
+    listen 443 ssl;
     server_name *.top;
+    ssl_certificate /root/cert/book.wsfss.top_bundle.pem; #ssl证书文件
+      ssl_certificate_key /root/cert/book.wsfss.top.key; #ssl证书文件
 
     location / {
-        proxy_pass http://121.37.19.93:443;
+        proxy_pass https://121.37.19.93;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

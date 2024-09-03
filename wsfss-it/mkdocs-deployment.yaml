@@ -57,7 +57,12 @@ metadata:
   namespace: prod
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false" #不强制访问ssl
 spec:
+  tls:
+  - hosts:
+    - book.wsfss.top
+    secretName: book-tls-secret
   rules:
   - host: book.wsfss.top
     http:
