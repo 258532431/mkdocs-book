@@ -502,7 +502,7 @@ server {
     listen 443 ssl;
     server_name *.top;
     ssl_certificate /root/cert/book.wsfss.top_bundle.pem; #ssl证书文件
-      ssl_certificate_key /root/cert/book.wsfss.top.key; #ssl证书文件
+    ssl_certificate_key /root/cert/book.wsfss.top.key; #ssl证书文件
 
     location / {
         proxy_pass https://121.37.19.93;

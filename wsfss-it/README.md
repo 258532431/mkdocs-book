@@ -1,6 +1,6 @@
 ### 运行环境
 
-1. python3.12.2
+1. python 3.12.x
 
 2. mkdocs 1.6.0
 
