@@ -26,6 +26,12 @@ nav:
     - Git: technology/git.md
     - Spring: technology/spring.md
     - RocketMQ: technology/rocketmq.md
+  - 经验积累:
+    - 事务管理: experience/transaction.md
+    - MyBatis: experience/mybatis.md
+    - 算法: experience/algorithm.md
+    - 幂等: experience/idempotent.md
+    - Redis: experience/redis.md
   - Mkdocs: 
     - 开始: mkdocs/start.md
     - 参考: mkdocs/reference.md
