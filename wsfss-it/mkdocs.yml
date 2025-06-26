@@ -27,6 +27,7 @@ nav:
     - Spring: technology/spring.md
     - RocketMQ: technology/rocketmq.md
   - 经验积累:
+    - MacOS:  experience/macos.md
     - 事务管理: experience/transaction.md
     - MyBatis: experience/mybatis.md
     - 算法: experience/algorithm.md
